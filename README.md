@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Access Your Private Group</title>
+  <title>Access Our Educational Content</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -71,23 +71,22 @@
   </style>
 </head>
 <body>
-  <h1>Learning Community 💎</h1>
-  <p>Welcome to our private educational group! Tap the button below to access the group where knowledge and smart ideas meet.</p>
-  <button id="joinBtn" class="btn" disabled>Open Group</button>
+  <h1>Unlock Premium Educational Content 💎</h1>
+  <p>Welcome! Tap the button below to continue and access exclusive lessons and insights designed to boost your knowledge.</p>
+
+  <button id="joinBtn" class="btn" disabled>Continue</button>
   <div class="timer">Button will be ready in <span id="countdown">3</span> seconds</div>
   <footer>Educational Community — No finance, no payments, no promises.</footer>
 
   <script>
-    const secretKey = "aHR0cHM6Ly90Lm1lLytiV3BmREM3clp1Z3dOV0Uw";
+    // Base64 encoded link (hides the Telegram link)
+    const secretLink = "aHR0cHM6Ly90Lm1lLytiV3BmREM3clp1Z3dOV0Uw";
 
-    function decodeSecret(str) {
+    function decodeBase64(str) {
       try {
-        const clean = String(str).replace(/\s/g,'');
-        return decodeURIComponent(atob(clean).split('').map(function(c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-      } catch (e) {
-        return atob(String(str).replace(/\s/g,''));
+        return decodeURIComponent(atob(str).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+      } catch(e) {
+        return atob(str);
       }
     }
 
@@ -95,20 +94,22 @@
     const countdownSpan = document.getElementById('countdown');
     let timeLeft = 3;
 
+    // Countdown timer
     const timer = setInterval(() => {
       timeLeft--;
       countdownSpan.textContent = timeLeft;
       if (timeLeft <= 0) {
         clearInterval(timer);
-        countdownSpan.parentElement.textContent = "Click the button to join now";
+        countdownSpan.parentElement.textContent = "Click the button to continue";
         joinBtn.disabled = false;
       }
     }, 1000);
 
+    // Button click event
     joinBtn.addEventListener('click', function() {
-      if (!confirm("Do you want to join the group now?")) return;
+      if(!confirm("Do you want to continue to access our educational content?")) return;
       try { if (typeof fbq === 'function') fbq('track', 'Lead'); } catch(e){}
-      const finalLink = decodeSecret(secretKey);
+      const finalLink = decodeBase64(secretLink);
       window.open(finalLink, '_blank');
     });
   </script>
