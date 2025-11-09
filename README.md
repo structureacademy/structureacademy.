@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Access Your Learning Space</title>
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>Access Your Learning Space</title>  
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -46,15 +48,36 @@
       font-size: 0.8rem;
       color: #94a3b8;
     }
+    .timer {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
   </style>
 </head>
-<body>
-  <h1>Welcome to Your Learning Space 🎓</h1>
+<body>  
+  <h1>Welcome to Your Learning Space 🎓</h1>  
   <p>Thank you for joining our educational community!  
-  Tap the button below to access our learning group and start exploring creative ideas together.</p>
-  
-  <a href="https://t.me/+bWpfDC7rZugwNWE0" target="_blank" class="button"> Learning Space</a>
-  
+  Tap the button below to access our learning group and start exploring creative ideas together.</p>  
+    
+  <a href="https://t.me/+bWpfDC7rZugwNWE0" target="_blank" class="button">Go to Learning Space</a>  
+  <div class="timer">Redirecting automatically in <span id="countdown">3</span> seconds...</div>
+
   <footer>Educational Community — No finance, no payments, no promises.</footer>
+
+  <script>
+    // Countdown + redirect
+    let timeLeft = 3;
+    const countdown = document.getElementById("countdown");
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdown.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = "https://t.me/+bWpfDC7rZugwNWE0";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
