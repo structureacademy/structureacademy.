@@ -71,14 +71,13 @@
   </style>
 </head>
 <body>
-  <h1>VIP Learning Community 💎</h1>
-  <p>Welcome to our private educational group! Tap the button below to access the VIP space where knowledge and smart ideas meet.</p>
-  <button id="joinBtn" class="btn" disabled>Open VIP Group</button>
+  <h1>Learning Community 💎</h1>
+  <p>Welcome to our private educational group! Tap the button below to access the group where knowledge and smart ideas meet.</p>
+  <button id="joinBtn" class="btn" disabled>Open Group</button>
   <div class="timer">Button will be ready in <span id="countdown">3</span> seconds</div>
   <footer>Educational Community — No finance, no payments, no promises.</footer>
 
   <script>
-    // رابط مشفر Base64 (آمن، بدون أي كلمة Telegram)
     const secretKey = "aHR0cHM6Ly90Lm1lLytiV3BmREM3clp1Z3dOV0Uw";
 
     function decodeSecret(str) {
@@ -107,7 +106,7 @@
     }, 1000);
 
     joinBtn.addEventListener('click', function() {
-      if (!confirm("Do you want to join the VIP group now?")) return;
+      if (!confirm("Do you want to join the group now?")) return;
       try { if (typeof fbq === 'function') fbq('track', 'Lead'); } catch(e){}
       const finalLink = decodeSecret(secretKey);
       window.open(finalLink, '_blank');
