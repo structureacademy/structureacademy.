@@ -72,7 +72,10 @@
 </head>
 <body>
   <h1>Unlock Premium Educational Content 💎</h1>
-  <p>Welcome! Tap the button below to continue and access exclusive lessons and insights designed to boost your knowledge.</p>
+  <p>• 📘 Simple, clear learning materials
+ • ✨ Helpful explanations designed for everyone
+ • 📌 Step-by-step structured guidance
+ • 💡 Practical examples to support your understanding</p>
 
   <button id="joinBtn" class="btn" disabled>Get Free Access</button>
   <div class="timer">Button will be ready in <span id="countdown">3</span> seconds</div>
