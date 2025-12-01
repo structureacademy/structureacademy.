@@ -74,7 +74,7 @@
   <h1>Unlock Premium Educational Content 💎</h1>
   <p>Welcome! Tap the button below to continue and access exclusive lessons and insights designed to boost your knowledge.</p>
 
-  <button id="joinBtn" class="btn" disabled>Get Free Access</button>
+  <button id="joinBtn" class="btn" disabled>Continue</button>
   <div class="timer">Button will be ready in <span id="countdown">3</span> seconds</div>
   <footer>Educational Community — No finance, no payments, no promises.</footer>
 
